@@ -43,6 +43,17 @@ def render_helprequest_list_as_html(helprequests):
         helprequests=helprequests,
         priorities=PRIORITIES)
 
+def render_helprequest_as_html(helprequest):
+    return render_template(
+        'events.html',
+        helprequest=helprequest,
+        priorities=reversed(list(enumerate(PRIORITIES))))
+    
+def render_helprequest_list_as_html(helprequests):
+    return render_template(
+        'event.html',
+        helprequests=helprequests,
+        priorities=PRIORITIES)
 def nonempty_string(x):
     s = str(x)
     if len(x) == 0:
